@@ -24,6 +24,8 @@ urlpatterns = [
     path("price/", views.price, name="price"),  # Subscription Page
     path("subscribe/<str:plan>/", views.create_payment, name="create_payment"),  # Create Payment Order
     path("verify_payment/", views.verify_payment, name="verify_payment"),  # Verify Payment
+    path("logout/", views.logout_view, name="logout"),
+
     
 ]
 

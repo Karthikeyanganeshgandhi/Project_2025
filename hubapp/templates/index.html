@@ -83,7 +83,7 @@
             {{ form.password.errors }}
             <p>Don't have an account? <a href="{% url 'register' %}" style="color:orangered; font-weight: bold;">Register</a></p><br>
             <p style="color: orangered; font-weight:bolder;">OR</p>
-            <p>Sign In with <a href="#" class="fa fa-google btn rounded-pill"></a></p>
+            <p>Sign In with <a href="{% url 'social:begin' 'google-oauth2' %}" class="fa fa-google btn rounded-pill"></a></p>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: red;color: white;">Cancel</button>
               <button type="submit" class="btn btn-primary">Login</button>

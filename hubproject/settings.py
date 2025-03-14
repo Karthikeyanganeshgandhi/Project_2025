@@ -38,7 +38,23 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'hubapp',
+    'django.contrib.sites',
+    'social_django',
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.google.GoogleOAuth2',  # Google Login
+    'django.contrib.auth.backends.ModelBackend',  # Default authentication
+)
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '175106310476-2h5lcglibgqbshukkkun3un6kudg5hn4.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+
+LOGIN_REDIRECT_URL = '/courses/'
+LOGOUT_REDIRECT_URL = '/'
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_REDIRECT_URI = 'http://127.0.0.1:8000/oauth/complete/google-oauth2/'  # Use your actual domain if deployed
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

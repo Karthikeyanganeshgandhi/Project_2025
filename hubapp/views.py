@@ -6,6 +6,8 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .decorators import subscription_required
+from django.contrib.auth import logout
+
 
 # ===============================================================================================================================================================
 
@@ -283,3 +285,8 @@ def verify_payment(request):
         return JsonResponse({"error": str(e)}, status=500)
     
 # ==============================================================================================================================================================================================================
+
+
+def logout_view(request):
+    logout(request)
+    return redirect("/") 

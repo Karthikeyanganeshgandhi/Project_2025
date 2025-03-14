@@ -114,7 +114,16 @@
             <p>
                 Data Science is a field that analyzes and interprets large amounts of data using statistics, programming, and machine learning techniques. It involves data collection, processing, visualization, and predictive modeling to derive insights and support decision-making. <br><br>
 
-                Machine Learning (ML) is a subset of data science that focuses on developing algorithms that learn patterns from data to make predictions or automate tasks. It includes techniques like supervised, unsupervised, and reinforcement learning, applied in areas such as image recognition, recommendation systems, and fraud detection.            </p>
+                Machine Learning (ML) is a subset of data science that focuses on developing algorithms that learn patterns from data to make predictions or automate tasks. It includes techniques like supervised, unsupervised, and reinforcement learning, applied in areas such as image recognition, recommendation systems, and fraud detection.</p>
+
+            <!-- Subscription Check -->
+            {% if request.user.is_authenticated and request.user.subsc.status == "active" %}
+                <p class="alert alert-success text-center">Welcome!</p>
+                  <!-- Show the course content here -->
+                <a href="{% url 'course_detail' %}">Go to Course</a>
+            {% else %}
+                
+            {% endif %}
           </div>
           <div class="col-lg-4">
 

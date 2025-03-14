@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -113,7 +114,16 @@
             <p>
               Data Marketing involves using data analytics to understand customer behavior, optimize marketing strategies, and improve campaign performance. It leverages insights from consumer data, social media, and website interactions to create personalized marketing efforts and enhance customer engagement. <br> <br>
 
-              SEO (Search Engine Optimization) is the practice of optimizing websites to improve their visibility on search engines like Google. It involves keyword research, content optimization, link building, and technical improvements to increase organic traffic and rank higher in search results.            </p>
+              SEO (Search Engine Optimization) is the practice of optimizing websites to improve their visibility on search engines like Google. It involves keyword research, content optimization, link building, and technical improvements to increase organic traffic and rank higher in search results.</p>
+
+              <!-- Subscription Check -->
+            {% if request.user.is_authenticated and request.user.subsc.status == "active" %}
+                <p class="alert alert-success text-center">Welcome!</p>
+                  <!-- Show the course content here -->
+               <a href="{% url 'course_detail' %}">Go to Course</a>
+            {% else %}
+                
+            {% endif %}
           </div>
           <div class="col-lg-4">
 

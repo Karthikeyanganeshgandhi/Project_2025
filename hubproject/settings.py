@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'hubapp.middleware.SubscriptionRequiredMiddleware',
 ]
 
 ROOT_URLCONF = 'hubproject.urls'
@@ -113,6 +114,8 @@ USE_I18N = True
 USE_TZ = True
 
 
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
@@ -121,6 +124,9 @@ STATICFILES_DIRS = [
     BASE_DIR / "C:/Users/karth/updated/hubproject/hubproject/static",  # assuming you have a static folder at the root of the project
 ]
 
+
+RAZORPAY_KEY_ID ='rzp_test_N8OgX89d5kCevO'
+RAZORPAY_KEY_SECRET= '0cq7vuOGLWy4A6Fw4fV5c0tM'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

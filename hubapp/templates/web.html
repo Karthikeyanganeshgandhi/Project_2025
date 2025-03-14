@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -112,7 +113,15 @@
 
             <h3>Web Development</h3>
             <p>
-                Web Development is the process of building and maintaining websites and web applications. It involves frontend development (UI/UX design using HTML, CSS, and JavaScript), backend development (server-side logic, databases, and APIs), and full-stack development (both frontend and backend). Modern web development also includes frameworks like React, Angular, and Node.js for efficient and dynamic applications. The goal is to create responsive, user-friendly, and high-performing websites for various purposes, from personal blogs to complex enterprise solutions.            </p>
+                Web Development is the process of building and maintaining websites and web applications. It involves frontend development (UI/UX design using HTML, CSS, and JavaScript), backend development (server-side logic, databases, and APIs), and full-stack development (both frontend and backend). Modern web development also includes frameworks like React, Angular, and Node.js for efficient and dynamic applications. The goal is to create responsive, user-friendly, and high-performing websites for various purposes, from personal blogs to complex enterprise solutions.</p>
+                
+            <!-- Subscription Check -->
+            {% if request.user.is_authenticated and request.user.subsc.status == "active" %}
+                <p class="alert alert-success text-center">Welcome!</p>
+                  <!-- Show the course content here -->
+                <a href="{% url 'course_detail' %}">Go to Course</a>
+            {% else %}
+            {% endif %}    
           </div>
           <div class="col-lg-4">
 
